@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>LambdaStyle - Card</title>
+    <base href=".." />
+    <link type="text/css" rel="stylesheet" href="lambdastyle.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.css" rel="stylesheet" />
+
+    <!-- Let brower know website is optimized for mobile. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header class="ls-navbar-parent">
+    <nav class="ls-navbar" ls-fixed>
+      <div class="ls-navbar-wrapper container">
+        <div class="ls-navbar-title">
+          <a class="white-text" href="/doc">LambdaStyle</a>
+        </div>
+        <div class="ls-spacer"></div>
+        <ul class="hide-on-med-and-down">
+          <li><a class="ls-btn" ls-variant="icon" href="/doc/about.html" aria-hidden="true"><i class="ls-icon" data-feather="info"></i></a></li>
+          <li><a class="ls-btn" ls-variant="icon" href="https://github.com/LambdAurora/lambdastyle" aria-hidden="true"><i class="ls-icon" data-feather="code"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+    </header>
+    <div class="ls-section container">
+      <div class="col s12">
+        <h2 class="h3">Cards</h2>
+      </div>
+    </div>
+    <div class="ls-divider"></div>
+    <main class="container ls-body1">
+      <div id="basic" class="ls-section">
+        <p>Cards contain content and actions about a single subject.</p>
+        <h3 class="h4">Basic card</h3>
+        <div class="row">
+          <div class="col s12 l4 ls-section container" style="background-color: #F7F7F7;">
+            <div class="ls-card">
+              <div class="ls-content container">
+                <span class="h5">Card Title</span>
+                <p>I am a very simple card.</p>
+              </div>
+              <div class="ls-card-actions">
+                <a class="ls-btn" href="#">An action</a>
+                <a class="ls-btn right" ls-variant="icon" href="#" aria-hidden="true"><i class="ls-icon" data-feather="heart"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <pre class="language-html" data-src="doc/src/card/basic_card.html"></pre>
+      </div>
+      <div id="media" class="ls-section">
+        <h3 class="h4">Card with Media</h3>
+        <p>Cards can embed media to illustrate the content.</p>
+        <div class="row">
+          <div class="col s12 l4 ls-section container" style="background-color: #F7F7F7;">
+            <div class="ls-card col s12 l6 offset-l3">
+              <div class="ls-content ls-card-media">
+                <img class="reponsive-img" src="doc/ressources/aerial-shot-bird-s-eye-view-forest-2025872.jpg" alt="Aerial shot, bird's eye view forest."></img>
+                <div class="col">
+                  <span class="h5">Title</span>
+                  <span class="ls-subtitle1" style="margin: auto;">Subtitle</span>
+                </div>
+              </div>
+              <div class="ls-content ls-body1">
+                <div style="padding: 1rem 1rem 8px;">
+                  There is a description here.
+                </div>
+              </div>
+              <div class="ls-content ls-body1">
+                <div style="padding: 0 1rem 8px;">
+                  Photo by <a href="https://www.pexels.com/@louis-965146">Louis</a> from <a href="https://www.pexels.com/photo/green-trees-2025872/">Pexels</a>
+                </div>
+              </div>
+              <div class="ls-card-actions">
+                <a class="ls-btn" href="#">An action</a>
+                <a class="ls-btn right" ls-variant="icon" href="#" aria-hidden="true"><i class="ls-icon" data-feather="heart"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <pre class="language-html" data-src="doc/src/card/card_with_media.html"></pre>
+      </div>
+      <div id="horizontal_media" class="ls-section">
+        <h3 class="h4">Card with horizontal media and text</h3>
+        <p>The media can be displayed smaller and horizontally with the text.</p>
+        <div class="row">
+          <div class="col s12 l4 ls-section container" style="background-color: #F7F7F7;">
+            <div class="ls-card">
+              <div class="ls-content ls-card-media" ls-size="small">
+                <img class="col s6 md4 responsive-img" src="doc/ressources/aerial-shot-bird-s-eye-view-forest-1559072.jpg" alt="Aerial shot, bird's eye view forest."></img>
+                <div class="col s6 md8 container">
+                  <span class="h5">Forest</span>
+                  <span class="ls-subtitle1">By <a href="https://www.pexels.com/@aloismoubax">Aloïs Moubax</a> from <a href="https://www.pexels.com/photo/bird-s-eye-view-of-trees-1559072">Pexels</a></span>
+                </div>
+              </div>
+              <div class="ls-card-actions">
+                <a class="ls-btn" href="https://www.pexels.com/photo/bird-s-eye-view-of-trees-1559072">View</a>
+                <a class="ls-btn right" ls-variant="icon" href="#" aria-hidden="true"><i class="ls-icon" data-feather="heart"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <pre class="language-html" data-src="doc/src/card/card_horizontal_media.html"></pre>
+      </div>
+    </main>
+    <footer class="ls-app-footer" style="background-color: #212329">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h6>A simple material design stylesheet.</h6>
+            <p>Made on <a href="https://github.com/LambdAurora/lambdastyle">GitHub</a>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="ls-app-footer-license">
+        <a class="right grey-text text-lighten-1 ls-subtitle2" href="../LICENSE">MIT License</a>
+      </div>
+    </footer>
+    <script type="text/javascript" src="lambdastyle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/plugins/file-highlight/prism-file-highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script>
+      LambdaStyle.init();
+      feather.replace();
+      Prism.plugins.autoloader.languages_path = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/'
+    </script>
+  </body>
+</html>
