@@ -7,25 +7,55 @@
  * see the LICENSE file.
  */
 
-LambdaStyle = {};
+LambdaStyle = {
+  debug: false,
+  log(msg) {
+    if (this.debug)
+      console.log(msg);
+  },
+  update() {
+    if (feather != null) {
+      feather.replace();
+    }
+    LambdaStyle.update_ripples();
+  }
+};
 LambdaStyle.internal = {};
 LambdaStyle.utils = {};
 
 // Activation events registered on the root element of each instance for activation.
-const LS_POINTER_ACTIVATION_EVENT_TYPES = ['touchstart', 'mousedown', 'keydown'];
+const LS_POINTER_ACTIVATION_EVENT_TYPES = ['touchstart', 'pointerdown', 'mousedown', 'keydown'];
 // Deactivation events registered on documentElement when a pointer-related down event occurs.
-const LS_POINTER_DEACTIVATION_EVENT_TYPES = ['touchend', 'mouseup', 'contextmenu'];
+const LS_POINTER_DEACTIVATION_EVENT_TYPES = ['touchend', 'pointerup', 'mouseup', 'contextmenu'];
 
-LambdaStyle.init = () => {
-  console.log(' -- LambdaStyle -- Initializing...');
+LambdaStyle.init = (options) => {
+  let auto_refresh = false;
+
+  if (options != null) {
+    if (options.hasOwnProperty('debug'))
+      LambdaStyle.debug = options.debug;
+    if (options.hasOwnProperty('auto_refresh'))
+      auto_refresh = options.auto_refresh;
+  }
+
+  LambdaStyle.log(' -- LambdaStyle -- Initializing...');
   LambdaStyle.init_ripples();
+
+  if (feather != null) {
+    LambdaStyle.log(' -- LambdaStyle -- Detected feather icons, replacing icons...');
+    feather.replace();
+  }
+
+  if (auto_refresh) {
+    LambdaStyle.enable_auto_refresh();
+  }
 };
 
-LambdaStyle.enable_auto_referesh = () => {
-  console.log(' -- LambdaStyle -- Enabled auto refresh.');
+LambdaStyle.enable_auto_refresh = () => {
+  LambdaStyle.log(' -- LambdaStyle -- Enabled auto refresh.');
   LambdaStyle.internal.mut_observer = new MutationObserver(mutations => {
     mutations.forEach(mutation => {
-      LambdaStyle.update_ripples();
+      LambdaStyle.update();
     });
   });
   LambdaStyle.internal.mut_observer.observe(document.querySelector('body'), { childList: true, subtree: true, attributes: true });
@@ -216,4 +246,3 @@ LambdaStyle.utils.to_array = (obj) => {
   }
   return array;
 };
-
