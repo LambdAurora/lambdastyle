@@ -1295,8 +1295,34 @@ nav.ls-navbar ul li > .ls-btn:hover:before {
     vertical-align: text-bottom;
 }
 
+p .ls-icon {
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+.ls-icon[ls-size="small"] {
+    font-size: 2rem;
+}
+
+.ls-icon[ls-size="small"].feather {
+}
+
+.ls-icon[ls-size="medium"].feather {
+    width: 36px;
+    height: 36px;
+}
+
+.ls-icon[ls-size="large"] {
+    font-size: 48px;
+}
+
+.ls-icon[ls-size="large"].feather {
+    width: 48px;
+    height: 48px;
+}
+
 a:not([ls-variant="icon"]) > .ls-icon {
-    margin-right: 0.5em;
+    margin-right: .5em;
 }
 
 /*
